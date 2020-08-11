@@ -1,22 +1,24 @@
 class Barrio {
 
-	const property elementos = []
+	Hogar||Mascota||Huerta const property elementos = []
 
-	method agregarElemento(elemento) {
+	method void agregarElemento(elemento) {
 		elementos.add(elemento)
+		//no devuelve nada
 	}
 
-	method sacarElemento(elemento) {
+	method void sacarElemento(elemento) {
 		elementos.remove(elemento)
+		//no devuelve nada
 	}
 
-	method elementosBuenos() {
+	method int elementosBuenos() {
 		return elementos.count{ e => e.esBueno() }
 	}
 
-	method elementosMalos() = elementos.count{ e => not e.esBueno() }
+	method int elementosMalos() = elementos.count{ e => not e.esBueno() }
 
-	method esCopado() {
+	method boolean esCopado() {
 		return self.elementosBuenos() > self.elementosMalos()
 	}
 
